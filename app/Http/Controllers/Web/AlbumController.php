@@ -26,8 +26,7 @@ class AlbumController extends Controller
     }
     public function create(AddAlbumRequest $request)
     {
-
-
+        
         $album = Album::create([
            'name'=>$request->name,
         ]);
@@ -52,9 +51,9 @@ class AlbumController extends Controller
 
     public function update(UpdateAlbumRequest $request,$id)
     {
-        $request->validate([
-            'name' => 'required|string|min:3|max:50',
-        ]);
+//        $request->validate([
+//            'name' => 'required|string|min:3|max:50',
+//        ]);
         $album = Album::findOrFail($id);
         $album->update([
             'name'=>$request->name,
